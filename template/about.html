@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block addcss %}
+{% load static %}
+<!--   <link rel="stylesheet" href="{% static 'homecss.css' %}"> -->
+<style>
+	{% include "indexcss.css" %}
+    .container{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px 12px;
+        margin: 12px;
+        
+    }
+    h1::before{
+        content: "";
+        position: absolute;
+        /* background-color: brown; */
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.3;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        color: rgb(29, 95, 194);
+    }
+    #section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 12px;
+        padding: 69px 12px;
+        font-size: 1.5rem;
+        font-family: 'Baloo Bhaina 2', cursive;
+    }
+    #section::before{
+        content: "";
+        background : url('https://www.humanitas.net/content/uploads/2017/10/medical-care.jpg')no-repeat center center/cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.9; 
+    }
+    #ok1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 12px;
+        padding: 10px 12px;
+        font-size: 1.5rem;
+        font-family: 'Baloo Bhaina 2', cursive;
+    }
+</style>
+{% endblock addcss %}
+
+
+
+{% block body %}
+{% include "navbar.html" %}
+<div class="container">
+    <h1>"ABOUT US"</h1>
+</div>
+<div id="section">
+    We are a team of 5 like-minded members who have come together for creating a project titled "Hospital Management System". We are a group of students studying Computer Engineering at Pune Institute of Computer Technology (PICT), Pune, India. With a guided motivation due to the COVID-19 pandemic and Web Development being a common field of interest, we decided to choose "Hospital Management System" as the topic for our project.
+</div>
+<div id="ok">
+    <h1>"MOTIVATION"</h1>
+</div>
+<div id="ok1">
+    During the COVID-19 pandemic, all of us were reminded that healthcare is the most critical aspect of our society, but many healthcare providers face challenges to offer practical and active services to patients. Considering a multi-speciality hospital, many people enter and exit the hospital in a day and maintaining their records safely is tedious. To reduce this burden and to manage the hospital administration and other clinical aspects, we thought of creating a "Hospital Management System."
+</div>
+{% endblock body %}

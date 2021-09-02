@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load static %}
+{% block addcss %}
+<style>
+{% include "indexcss.css" %}
+{% include "button.css" %}
+</style>
+<!-- <link rel="stylesheet" href="{% static 'homecss.css' %}"> -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="{% static 'scss/button.css'%}"> -->
+{% endblock addcss %}
+{% block dropdown %}
+<style>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .demo{
+    text-align: center;
+    margin-top: 21px;
+  }
+ /* .button {
+  border-radius: 31px;
+  /* background-color: #d2d6d6; */
+  /* background-color:#4bdbf5; */
+  /* box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6); */
+  /* border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 12px;
+  width: 330px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: Georgia, serif;
+} */ 
+#check{
+  font-size:40px;
+  font-weight: 600;
+  text-align: center;
+  font-family: Georgia, serif;
+  margin-top: 16px;
+  color: rgb(51, 45, 46);
+  
+}
+/* body{
+  background: url(https://d1sjtleuqoc1be.cloudfront.net/wp-content/uploads/2013/11/25124222/shutterstock_78701641_doctor-860x642.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+} */
+html { 
+  background: url('https://www.wellmo.com/wp-content/uploads/2020/03/kuva-uutiseen-scaled.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+</style>
+{% endblock dropdown %}
+{% block body %}
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script> 
+<script>
+
+{% for message in messages  %}
+// <!-- swal("Hello world!"); -->
+// <!-- <script>swal({{message}});</script>
+<!-- swal('{{message}}'); -->
+swal("Good job!", '{{message}}');
+
+{% endfor %}
+</script>
+{% include "navbar.html" %}
+<!-- <nav id="navbar">
+  <div id="logo">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHpWuCN2xDhjMP1--Enl518EGCB5Rb2ipY6A&usqp=CAU"
+      alt="SSMDY-HMS">
+  </div>
+  <ul>
+    <li class="item"><a href="/home">Home</a></li>
+    <li class="item"><a href="/about">About Us</a></li>
+    {% if user.is_authenticated %}
+    {% else %}
+    <li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
+    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+
+
+    {% endif %}
+    <li class="item"><a href="/contact">Contact Us</a></li>
+    <li class="item"><a href="/covid">COVID</a></li>
+    {% if user.is_authenticated %}
+    <li class="nav-item" style="float: right;"><a href="/logout" class="nav-link">Logout</a></li>
+    {% endif %}
+  </ul>
+</nav> -->
+<!-- {% for f in f  %} -->
+  <!-- <h1 id="check">Hello {{f}}</h1> -->
+<!-- {% endfor %} -->
+<!-- {{f | title}} -->
+<p id="check">Hello {{f | title}}</p>
+<!-- <p>This is a typewriter effect.</p> -->
+<div class="demo">
+  <!-- <button class="button"><span><a href="/appointment">New Appointment</a></span></button> -->
+<!-- <button class="button"><span><a href="/history">Appointment History</a></span></button> -->
+<a href="/appointment" class="button">New Appointment</a>
+<a href="/history" class="button">Appointment History</a>
+</div>
+
+<!-- <div id="demo">
+
+  <button class="button"><a  href="/appointment">New Appointment</a></button>
+  <button class="button"><a href="/history">Appointment History</a></button>
+</div> -->
+
+{% endblock body %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block addcss %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'scss/button.css'%}">
+<style>
+  #check{
+  font-size:40px;
+  font-weight: 600;
+  text-align: center;
+  display: inline;
+  font-family: Georgia, serif;
+  margin-top: 16px;
+  color: rgb(51, 45, 46);
+  
+}
+a{
+  text-decoration: none;
+}
+#button{
+  float: right;
+}
+</style>
+{% endblock addcss %}
+{% block body %}
+<div>
+
+  <a href="/logout" class="button" id="button" style="font-size: 15px;">Logut</a>
+  <!-- <h1>{{user.username}}</h1> -->
+  <span id="check">Hello Dr.{{f | title}}</span>
+</div>
+  <!-- {% for a in appointments %}
+    <p>{{a.name}}  {{a.date}}</p>
+  {% endfor %} -->
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in appointments %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{a.name}}</td>
+        <td>{{a.date}}</td>
+        <td>{{a.description}}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+
+
+
+{% endblock body %}

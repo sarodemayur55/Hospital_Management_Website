@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block addcss %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'signupstyles.css' %}">
+{% endblock addcss %}
+{% block body %}
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script>
+  {% for message in messages  %}
+// <!-- swal("Hello world!"); -->
+// <!-- <script>swal({{message}});</script>
+<!-- swal('{{message}}'); -->
+swal("Oops!",'{{message}}', "error");
+
+{% endfor %}
+</script>
+<!-- <form action="register" method="POST">
+    {% csrf_token %}
+    <input type="text" name="firstname" placeholder="enter first name" required><br>
+    <input type="text" name="lastname" placeholder="enter last name" required><br>
+    <input type="text" name="username" placeholder="enter username" required><br>
+    <input type="text" name="password1" placeholder="enter password" required><br>
+    <input type="text" name="password2" placeholder="confirm password" required><br>
+    <input type="submit">
+</form> -->
+
+<div class = "singup-card">
+    <h3>Sign-up</h3><br>
+    <form action="register" method="POST">
+      {% csrf_token %}
+      <input type="text" name="firstname" id="name" placeholder="First Name" required>
+      <input type="text" name="lastname" id="name" placeholder="Last Name" required>
+      <!-- <input type="text" name="mymail" id="mail" placeholder="Email"> -->
+      <input type="text" name="username" id="username" placeholder="Create username">
+      <input type="text" name="password1" id="password" placeholder="Password">
+      <input type="text" name="password2" id="password1" placeholder="Confirm password">
+      <input type="submit" name="signup" class="signup-submit" value="Submit">
+    </form>
+    <!-- {% for message in messages  %}
+    {{message}}
+      
+    {% endfor %} -->
+  </div>
+  <div class="signup-help">
+    <a href="login">Already have an account?</a>
+  </div>
+  <script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+
+<!-- <div>
+    <h3>
+        {% for message in messages %}
+          {{message}}
+        {% endfor %}
+    </h3>
+</div> -->
+{% endblock body %}

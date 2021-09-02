@@ -1,0 +1,28 @@
+<nav id="navbar">
+    <!-- https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHpWuCN2xDhjMP1--Enl518EGCB5Rb2ipY6A&usqp=CAU -->
+    <div id="logo">
+      <img src="https://image.flaticon.com/icons/png/512/33/33777.png"
+        alt="SSMDY-HMS" style="height: inherit;">
+    </div>
+    <ul>
+      <li class="item"><a href="/home">Home</a></li>
+      <li class="item"><a href="/about">About Us</a></li>
+      {% if user.is_authenticated %}
+      <!-- <li class="nav-item">Hi! {{user.username}}</li> -->
+      <!-- <li class="nav-item" style="float: right;"><a href="/logout" class="nav-link">Logout</a></li> -->
+      {% else %}
+      <li class="nav-item"><a href="/register" class="nav-link">Register</a></li>
+      <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+  
+  
+      {% endif %}
+      <!-- <li class="item"><a href="">Services</a></li> -->
+      <!-- <li class="item"><a href="/Login.html">Register</a></li> -->
+      <li class="item"><a href="/contact">Contact Us</a></li>
+      <li class="item"><a href="/covid">COVID</a></li>
+      {% if user.is_authenticated %}
+      <!-- <li class="nav-item">Hi! {{user.username}}</li> -->
+      <li class="nav-item" style="float: right;"><a href="/logout" class="nav-link">Logout</a></li>
+      {% endif %}
+    </ul>
+  </nav>

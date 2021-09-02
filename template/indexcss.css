@@ -1,0 +1,227 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* Navigation bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    height: 82px;
+    
+}
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Logo image */
+#logo{
+    margin: 13px 34px;
+    height: 87px;
+}
+#logo img{
+    width: 104px;
+    margin: 1px 36px;
+}
+
+#navbar ul{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: 1000;
+   
+    
+}
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 10px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    
+}
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+    
+}
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 637px;
+    justify-content: center;
+    align-items: center;
+}
+#home::before{
+    content: "";
+    background : url('https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?size=626&ext=jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;   
+}
+#home h1{
+    text-align: center;
+    color: rgb(68, 65, 65);
+    font-weight: 800;
+    font-size: 94px;
+    font-family: 'Bree Serif', serif; 
+}
+#home p{
+    text-align: center;
+    color:black;
+    font-size: 1.5rem;
+    font-family: 'Bree Serif', serif;
+}
+/* services container */
+.services-container{
+    background: url('https://img.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg?size=626&ext=jpg') no-repeat center center/cover;
+}
+#services{
+    margin: 0px 34px;
+    display: flex;
+    text-decoration: none;
+    /* background: url('https://www.connectinternetsolutions.com/wp-content/uploads/2016/02/12-Courses-for-Starting-Your-Web-Development-Journey-800x500.jpg'); */
+
+}
+#services .box a{
+    text-decoration: none;
+    color: white;
+}
+#services .box{
+    border: 3px dashed rgb(20, 17, 17);
+    width: 50%;
+    padding: 34px;
+    margin: 12px;
+    border-radius: 50px;
+    /* background-color: rgb(245, 242, 238); */
+    text-decoration: none;
+    
+}
+#services .box img{
+    display: block;
+    height: 150px;
+    margin: auto;
+}
+#services .box p{
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    padding-top: 27px;
+}
+#services .box .button{
+    display: block;
+    margin: auto;
+    width: max-content;
+    text-decoration: none;
+}
+/* Team Section */
+#team-section{
+    position: relative;
+    height: 328px;
+    background: url('https://digitallynext.com/wp-content/uploads/2019/08/meet-the-team-title-background-v2.jpg') no-repeat center center/cover;
+}
+#team-section::before{
+    /* height: 44px; */
+    content: "";
+    position: absolute;
+    
+    height: 90%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+#teams{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#teams img{
+    height: 223px;
+    width: 223px;
+}
+.team-item{
+    padding: 34px;
+}
+#teams .xyz{
+    text-align: center;
+    color: white;
+    /* font-size:larger; */
+    font-size: 32px;
+    font-weight: 600;
+    /* font-family: 'Baloo Bhai 2', cursive; */
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Lobster', cursive;
+}
+#teams .abc img{
+    display: inline;
+    width: 93px;
+    height: 66px;
+    text-decoration: none;
+    
+}
+#teams .abc img:hover{
+    background-color: honeydew;
+    
+}
+/* utility classes */
+.h-primary{
+    font-size: 2.8rem;
+    padding: 12px;
+    font-family: 'Bree Serif', serif;
+}
+.h-secondary{
+    font-size: 1.8rem;
+    padding: 12px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.btn{
+    padding: 6px 13px;
+    border: 2px solid white;
+    background-color: tomato;
+    color: white;
+    margin: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.center{
+    text-align: center;
+}
+
+
+
+
+
+
+.footer-heart{text-align:center;}
+
+.footer-heart a{border-bottom: 1px solid #453886;color: #584c88;padding-bottom: .25em; text-decoration: none;font-family: 'Courier New', Courier, monospace;}
+
+.footer-heart a:hover{color:#2196f3; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: .3em;
+  text-decoration: none;}
+
+.emoji{vertical-align: middle;}

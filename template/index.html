@@ -1,0 +1,139 @@
+﻿{% extends "base.html" %}
+{% load static %}
+{% block addcss %}
+<!-- {% load static %} -->
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+<!--    <link rel="stylesheet" href="{% static 'indexcss.css' %}">    -->
+<style>
+    {% include "indexcss.css" %} 
+{% include "button.css" %}
+</style>
+
+<style>
+    .cp-text{ color: rgba(224, 221, 221, 0.7); text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+        font-family: 'Anton', sans-serif;
+    text-align: end;}
+</style>
+{% endblock addcss %}
+
+{% block body %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script>
+  {% for message in messages  %}
+// <!-- swal("Hello world!"); -->
+// <!-- <script>swal({{message}});</script>
+<!-- swal('{{message}}'); -->
+swal("Good job!", '{{message}}');
+
+{% endfor %}
+</script>
+{% include "navbar.html" %}
+<section id="home">
+        <h1 class="h-primary">
+            Welcome to SSMDY-HMS
+        </h1>
+        <p>Established by Dr Prathap C Reddy in 1983, SSMDY-HMS has a robust presence across the healthcare ecosystem. From routine wellness & preventive health care to innovative life-saving treatments and diagnostic services,SSMDY-HMS Hospitals has touched more than 120 million lives from over 120 countries, offering the best clinical outcomes.. </p>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius delectus deserunt quidem. Voluptate,
+            praesentium deleniti ullam at Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi molestiae eum
+            ab porro neque, odio quas libero est minus non nobis? </p> -->
+        
+    </section>
+    <section class="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="https://icon-library.com/images/appointment-icon/appointment-icon-3.jpg"
+                    alt="App">
+                <h2 class="h-secondary center">Make Appointement</h2>
+                <!-- <button class="btn"><a href="/login">Book</a></button> -->
+                <a href="/login" class="button">Book</a>
+                <p class="center">You can book physical appointment instantly using our service </p>
+            </div>
+            <div class="box">
+                <img src="https://img.icons8.com/ios/452/order-history.png"
+                    alt="App">
+                <h2 class="h-secondary center">View History</h2>
+                <!-- <button class="btn"><a href="/login">View History</a></button> -->
+                <a href="/login" class="button">History</a>
+                <p class="center">Using this service, you can view your past booked appointments</p>
+            </div>
+        </div>
+    </section>
+    <section  id="team-section" >
+    
+        <h1 class="h-primary center" style="color: rgb(207, 197, 197);" >Our Team</h1>
+        <div id="teams">
+            <div class="team-item">
+                {% comment %} <img src="images/00100sPORTRAIT_00100_BURST20201207145000520_COVER.jpg" alt=""> {% endcomment %}
+                <div class="xyz">Shreyash Shinkar</div>
+                {% comment %} <div class="abc">
+                    <a href="https://www.linkedin.com/in/shreyash-shinkar"><img src="images/iconfinder_14_5209164.png" alt=""></a>
+                    <a href=""><img
+                            src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png"
+                            alt=""></a>
+                </div> {% endcomment %}
+            </div>
+            <div class="team-item">
+                {% comment %} <img src="https://instagram.fpnq7-2.fna.fbcdn.net/v/t51.2885-19/s320x320/187692922_502529967611308_5587365166756753421_n.jpg?tp=1&_nc_ht=instagram.fpnq7-2.fna.fbcdn.net&_nc_ohc=IhLoV8NnhLcAX867lRz&edm=ABfd0MgBAAAA&ccb=7-4&oh=f659429a8ddb409f612b4e01a18411c0&oe=60B24E4C&_nc_sid=7bff83" alt=""> {% endcomment %}
+                <div class="xyz">Mayur Sarode</div>
+                {% comment %} <div class="abc">
+                    <a href="https://www.linkedin.com/in/mayur-sarode-89a08417a/"><img src="images/iconfinder_14_5209164.png" alt=""></a>
+                    <a href="https://www.instagram.com/_mayur_1310/"><img
+                            src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png"
+                            alt=""></a>
+                </div> {% endcomment %}
+            </div>
+            <div class="team-item">
+                {% comment %} <img src="images/WhatsApp Image 2021-03-14 at 11.19.42 PM.jpeg" alt=""> {% endcomment %}
+                <div class="xyz">Shashank Udgirkar</div>
+                {% comment %} <div class="abc">
+                    <a href="https://www.linkedin.com/in/shashank-udgirkar-64630b1b5/"><img src="images/iconfinder_14_5209164.png" alt=""></a>
+                    <a href="https://www.instagram.com/shashankudgirkar2000/"><img
+                            src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png"
+                            alt=""></a>
+                </div> {% endcomment %}
+            </div>
+            <div class="team-item">
+                {% comment %} <img src="images/WhatsApp Image 2021-03-14 at 4.42.18 PM.jpeg" alt=""> {% endcomment %}
+                <div class="xyz">Yash Uttarwar</div>
+                {% comment %} <div class="abc">
+                    <a href=""><img src="images/iconfinder_14_5209164.png" alt=""></a>
+                    <a href="https://www.instagram.com/thename_is_.yash/"><img
+                            src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/05/instagram-logo-796x404.png"
+                            alt=""></a>
+                </div> {% endcomment %}
+            </div>
+            <div class="team-item">
+                {% comment %} <img src="images/20201209_102556.jpg" alt=""> {% endcomment %}
+                <div class="xyz">Deep Thombare</div>
+                {% comment %} <div class="abc">
+                    <a href="https://www.linkedin.com/in/deep-thombare-06967b1b2"><img src="images/iconfinder_14_5209164.png" alt=""></a>
+                    <a href="https://www.instagram.com/deepthombare01/"><img
+                            src="https://www.instagram.com/elfsight/"
+                            alt=""></a>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </section>
+  {% comment %} {% for Name in Names %}
+<p>Name: {{Name.n}}</p>
+  {% endfor %}
+
+  {% if messages %}
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+{% endif %} {% endcomment %}
+<div class="container" style="background-color: black;">
+<h1 class="footer-heart">
+  Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+<img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"></g-emoji> 
+ by Mayur</h1>
+ <p class="cp-text">
+    © Copyright 2021 ssmdy-hms. All rights reserved.
+</p>
+</div>  
+{% endblock body %}

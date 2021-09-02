@@ -1,0 +1,507 @@
+{% extends "base.html" %}
+{% block dropdown %}
+<title>Family Medicine Practice</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, textarea, label, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 38px;
+      margin-top: 33px;
+      color: rgb(104, 98, 98);
+      z-index: 2;
+      line-height: 83px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 56%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999; 
+      }
+      .banner {
+      position: relative;
+      height: 300px;
+      background-image: url("/uploads/media/default/0001/02/174b2e72df50743dfaa0a3bf9d2e59d8b42c91e1.jpeg");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background: url('https://t3.ftcdn.net/jpg/02/16/47/22/360_F_216472247_cT66WDoS0fp1s3wC7eaykMJNDGVbOBPq.jpg') no-repeat center center/cover; 
+      
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #669999;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0  #669999;
+      color: #669999;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color:  #a3c2c2;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .question-answer label {
+      display: block;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid  #669999;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid  #669999;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .flax {
+      display:flex;
+      justify-content:space-around;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background:  #669999;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background:  #a3c2c2;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+    </style>
+<!-- <meta name="description" content="">
+<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+<meta name="generator" content="Hugo 0.83.1">
+<title>Appointment Page</title>
+<base href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3"> -->
+
+
+<!-- <style>
+  body {
+    background-color: rgb(250, 245, 245);
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+
+  }
+</style> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/i18n/zh-TW.min.js"
+  integrity="sha512-whWyZS4LtoXu4LzFJbHIgL9Cr7Sf2+KyeEAGumtXN+8U234v1R89monfd9PLYnC0TNBArmPnkFOVo8ShuMpZaw=="
+  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var $select1 = $('#select1'),
+      $select2 = $('#select2'),
+      $options = $select2.find('option');
+    $select1.on('change', function () {
+      $select2.html($options.filter('[id="#' + this.value + '"]'));
+    }).trigger('change');
+
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $('#select1').select2({
+
+    });
+    $('#select2').select2({
+
+    });
+  })
+</script>
+{% endblock dropdown %}
+
+{% block body %}
+<div class="testbox">
+  <form action="appointment" method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="banner">
+      <h1>Book Appointment</h1>
+    </div>
+    <br/>
+    <fieldset>
+      <legend>Patient Information</legend>
+      <div class="item">
+        <label for="name">Name of Patient<span>*</span></label>
+        <input id="name" type="text" name="name" id="name" required/>
+      <!-- </div>
+      <div class="item">
+        <label for="lname"> Last Name<span>*</span></label>
+        <input id="lname" type="text" name="lname" required/>
+      </div> -->
+      <!-- <div class="item">
+        <label for="initial">Middle Initial<span>*</span></label>
+        <input id="initial" type="text" name="initial" required/>
+      </div> -->
+      <div class="item">
+        <label for="mobile">Mobile Number<span>*</span></label>
+        <input id="mobile" type="number" id="mobile" name="mobile" required/>
+      </div>
+      <div class="item">
+        <label for="email">Email Id<span>*</span></label>
+        <input id="email" type="email" id="email"  name="email" required/>
+      </div>
+      <div class="item">
+        <label for="age">Age<span>*</span></label>
+        <input id="age" type="number" id="age"  name="age" required/>
+      </div>
+      <!-- <div class="item">
+        <label for="phone">Evening Phone<span>*</span></label>
+        <input id="phone" type="number"   name="phone" required/>
+      </div>
+      <div class="item">
+        <label for="bdate">Birth Date <span>*</span></label>
+        <input id="bdate" type="date" name="bdate" required/>
+        <i class="fas fa-calendar-alt"></i>
+      </div> -->
+      <div class="question">
+        <label>Gender</label>
+        <div class="question-answer">
+          <div>
+            <input type="radio" value="male" id="radio_1" required name="gender"/>
+            <label for="radio_1" class="radio"><span style="color: #666;">Male</span></label>
+          </div>
+          <div>
+            <input  type="radio" value="female" id="radio_2" required name="gender"/>
+            <label for="radio_2" class="radio"><span style="color: #666;">Female</span></label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <br/>
+    <fieldset>
+      <legend>Appointment Information</legend>
+      <div class="item">
+        <label for="date">Date<span>*</span></label>
+        <input id="date" type="date" name="date" required/>
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      
+      <div class="item">
+      <p>Type</p>
+      <select id="select1" name="type" >
+        <option selected disabled="true">Select type</option>
+        {% for s in specialistobj %}
+          <option value="{{s.sid}}">{{s.sname}}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <p>Doctor</p>
+       <select id="select2" name="doctorname">
+        <option selected disabled="true">Select doctor</option>
+        {% for d in doctorobj %}
+          <option id="#{{d.sid}}" value="{{d.dname}}">{{d.dname}}</option>
+        {% endfor %}
+      </select>
+    </div>
+      <!-- <div class="question">
+        <label>Preferred Physician</label>
+        <div class="question-answer">
+          <div>
+            <input type="radio" value="none" id="radio_1" name="physician"/>
+            <label for="radio_1" class="radio"><span>Dr. Anderson</span></label>
+          </div>
+          <div>
+            <input  type="radio" value="none" id="radio_3" name="physician"/>
+            <label for="radio_3" class="radio"><span>Dr. Patel</span></label>
+          </div>
+          <div>
+            <input  type="radio" value="none" id="radio_4" name="physician"/>
+            <label for="radio_4" class="radio"><span>No preference</span></label>
+          </div>
+          <div>
+            <input  type="radio" value="none" id="radio_5" name="physician"/>
+            <label for="radio_5" class="radio"><span>Dr. Jones</span></label>
+          </div>
+          <div>
+            <input  type="radio" value="none" id="radio_6" name="physician"/>
+            <label for="radio_6" class="radio"><span>Dr. Smith</span></label>
+          </div>
+        </div>
+      </div> -->
+      <div class="item">
+        <label for="description">Please describe the reason for this visit </label>
+        <textarea id="description" name="description" rows="3"></textarea>
+      </div>
+    </fieldset>
+    <div class="btn-block">
+      <button type="submit" href="/">Submit</button>
+    </div>
+  </form>
+</div>
+
+<!-- <div class="container">
+  <main>
+    <div class="py-5 text-center">
+
+      <h1>Appointement</h1>
+
+    </div>
+
+    <div class="row g-5">
+
+      <div class="col">
+
+        <form  action="appointment" method="POST" autocomplete="off">
+          {% csrf_token %}
+          <div class="row g-3">
+
+            <div class="col-sm-6">
+              <label for="name" class="form-label">Name of Patient</label>
+              <input type="text" name="name" class="form-control" id="name" placeholder="" value="">
+            </div>
+
+            <div class="col-sm-6">
+              <label for="mobile" class="form-label">Mobile Number</label>
+              <input type="tel" name="mobile" class="form-control" id="mobile" placeholder="" value="">
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email Id</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="">
+            </div>
+
+            <div class="col-12">
+              <label for="age" class="form-label">Age</label>
+              <input type="number" class="form-control" name="age" id="age" placeholder="">
+            </div>
+            
+            <div class="col-12">
+              <label for="description" class="form-label">Description</label>
+              <textarea name="description" class="form-control rounded-0" id="description" rows="3"></textarea>
+            </div>
+
+            <div class="col-md-6">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" name="date" class="form-control" id="date" placeholder="">
+            </div>
+
+            <div class="col-md-6">
+              <label for="type" class="form-label">Type</label>
+              
+              </select>
+              <select id="select1" name="type" class="form-select">
+                <option selected disabled="true">Select type</option>
+                {% for s in specialistobj %}
+                <option value="{{s.sid}}">{{s.sname}}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="doctorname" class="form-label">Doctor</label>
+             
+              <select id="select2" name="doctorname" class="form-select">
+                <option selected disabled="true">Select doctor</option>
+                {% for d in doctorobj %}
+                <option id="#{{d.sid}}" value="{{d.dname}}">{{d.dname}}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+          </div>
+
+          <button style="margin-top:30px; margin-left:50%" id="submit" class="btn btn-primary btn-md" type="submit">Submit
+            Now</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+</div> -->
+
+<!-- 
+<script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>This is Appointment page</p>
+<form action="appointment" method="POST" autocomplete="off">
+  {% csrf_token %}
+  <label for="name">Name of patient </label>
+  <input type="text" name="name" id="name"><br>
+  <label for="gender">gender</label>
+  
+  <label for="male">Male</label>
+  <input type="radio" name="gender" id="male" value="male">
+  <label for="female">Female</label><br>
+  <input type="radio" name="gender" id="female"  value="female">
+  <label for="mobile">Mobile Number <input type="tel" name="mobile" id="mobile"  ></label><br>
+  <label for="email">Email <input type="email" name="email" id="email"></label><br>
+  <label for="age">Age <input type="number" name="age" id="age"></label><br>
+  <label for="description" style="vertical-align: top;" >Description </label><textarea name="description" cols="40"  id="description"></textarea><br> 
+  <label for="date">Date<input type="date" name="date" ></label>
+
+  type <select id="select1">
+    <option selected disabled="true">Select type</option>
+    {% for s in specialistobj %}
+      <option value="{{s.sid}}">{{s.sname}}</option>
+    {% endfor %}
+  </select>
+  <br>
+  Doctor <select id="select2" name="doctorname">
+    <option selected disabled="true">Select doctor</option>
+    {% for d in doctorobj %}
+      <option id="#{{d.sid}}" value="{{d.dname}}">{{d.dname}}</option>
+    {% endfor %}
+  </select><br>
+  <input type="submit" id="submit" value="submit now">
+</form> -->
+{% endblock body %}

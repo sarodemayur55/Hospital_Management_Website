@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block addcss %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+{% endblock addcss %}
+{% block body %}
+<p style="text-align: center;font-size: 43px;font-weight: bold; ">Your Past Appointments</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Doctor name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for h in history %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{h.name}}</td>
+      <td>{{h.date}}</td>
+      <td>{{h.doctorname}}</td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+{% endblock body %}
